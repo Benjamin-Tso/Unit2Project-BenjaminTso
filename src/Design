@@ -1,0 +1,39 @@
+Imported Classes:
+    Scanner - retrieve user input
+    DecimalFormat and RoundingMode - rounding and formatting of decimals before they are printed
+Instance variables:
+
+    private String coord1 - This variable is the inputted string which should be the first set of coordinates
+
+    private String coord2 - This variable is the inputted string which should be the second set of coordinates
+
+    private double x1 - This variable is the x value parsed from the coord1 string, this will be parsed with the parseCoordinates method (this value is stored rather than recalculated with each use for efficiency)
+
+    private double y1 - This variable is the y value parsed from the coord1 string, this will be parsed with the parseCoordinates method (this value is stored rather than recalculated with each use for efficiency)
+
+    private double x2 - This variable is the x value parsed from the coord2 string, this will be parsed with the parseCoordinates method (this value is stored rather than recalculated with each use for efficiency)
+
+    private double y2 - This variable is the y value parsed from the coord2 string, this will be parsed with the parseCoordinates method (this value is stored rather than recalculated with each use for efficiency)
+
+Constructor:
+
+    public LinearEquation(String c1, String c2)
+
+Methods :
+
+    public int[] parseCoordinates(String c) - This method will return a list with 2 values representing the x and y values
+    This method will first remove parenthesis if there are any, then using indexOf and substring will find two values, which will be parsed using the Integer class' parseInt
+    finally these two values will be appended into an empty list and returned
+
+    public Double[] findSlope(double x1,double y1,double x2,double y2) - This method will use the formula of (y2-y1)/(x2-x1) to find the slope which is then returned along with a 1, before the slope is calculated there will be an if statement for whether x1 and x2 are equal, if they are then it will return [0]
+
+    public String findYIntercept(double x1,double y1) - This method with the help of findSlope will find the y intercept by finding difference between y1 and x1 multiplied by the slope, this method will check for the length of the returned value of findSlope, if the length is 1 meaning the equation represents a vertical line, it will return "Does Not Exist", this method will return a signed double as a string
+
+    public String findDistance(double x1,double y1,double x2,double y2) - Using the pythagorean theorem, this method will find the distance between the two points by finding the square root of the sum of the x and y displacement squared
+
+    public String toString() - This method will allow print statements directly referencing the object to print out the values of: the two points, the equation, slope, y intercept, and distance between the two points. The format of the equation will be in three possible formats y = n for horizontal line (0 slope), y = mx+b (non zero slope), x = n vertical line
+
+    public String solve(double xIn) - This method will return a set of coordinates as a string, found by replacing the x value in the equation with xIn which will be parsed from user input
+
+
+
