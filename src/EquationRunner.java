@@ -8,23 +8,22 @@ public class EquationRunner {
         String c2 = s.nextLine().replace("\n", "").replace("\r", "").replaceAll(" ", "");
         LinearEquation l = new LinearEquation(c1, c2);
         System.out.println(l);
-        boolean active = true;
         do {
             System.out.print("Enter an X value to solve with the equation above(q to quit): ");
             String in = s.nextLine().replace("\n", "").replace("\r", "").replaceAll(" ", "");
             boolean isNumber = true;
             for (int i = 0; i < in.length(); i++) {
-                if (!Character.isDigit(in.charAt(i)) && String.valueOf(in.charAt(i))!="."){
+                if (!Character.isDigit(in.charAt(i)) && !String.valueOf(in.charAt(i)).equals(".")){
                     isNumber = false;
                 }
             }
             if (in.contains("q")) {
-                active = false;
+                break;
             }
             else if (isNumber){
                 System.out.println(l.solve(Double.parseDouble(in)));
             }
-        } while (active);
+        } while (true);
         System.out.println("Goodbye!");
     }
  }

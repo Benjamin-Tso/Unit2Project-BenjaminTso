@@ -33,10 +33,12 @@ Methods :
 
     public String toString() - This method will allow print statements directly referencing the object to print out the values of: the two points, the equation, slope, y intercept, and distance between the two points. The format of the equation will be in three possible formats y = n for horizontal line (0 slope), y = mx+b (non zero slope), x = n vertical line
 
-    public String solve(double xIn) - This method will return a set of coordinates as a string, found by replacing the x value in the equation with xIn which will be parsed from user input
+    public String solve(double xIn) - This method will return the corresponding y value for an x value that the user inputs, which will be plugged into x in the equation found
+
+    public String formEquation() - This method will take the slope and y intercepts and form a string that represents the equation in the form of y = mx + b
 
 Runner class:
-    use scanner to get two inputs from the user, which will then be used to create a new LinearEquation object, after that a loop will start where the user will input a x value for the program to solve (q will be used to quit)
+    use scanner to get two inputs from the user, which will then be used to create a new LinearEquation object, after that a loop will start where the user will input a x value, which will be checked for whether it is a numerical value or not, then the program will solve (q will be used to quit)
 
 
 
