@@ -10,12 +10,22 @@ public class EquationRunner {
         System.out.println(l);
         boolean active = true;
         do {
-            System.out.print("Enter an X value to solve with the equation above: ");
-            if (s.nextLine().contains("q")) {
+            System.out.print("Enter an X value to solve with the equation above(q to quit): ");
+            String in = s.nextLine().replace("\n", "").replace("\r", "").replaceAll(" ", "");
+            boolean isNumber = true;
+            for (int i = 0; i < in.length(); i++) {
+                if (!Character.isDigit(in.charAt(i)) && String.valueOf(in.charAt(i))!="."){
+                    isNumber = false;
+                }
+            }
+            if (in.contains("q")) {
                 active = false;
             }
-            System.out.println(l.solve(Double.parseDouble(s.nextLine())));
+            else if (isNumber){
+                System.out.println(l.solve(Double.parseDouble(in)));
+            }
         } while (active);
+        System.out.println("Goodbye!");
     }
  }
 

@@ -50,7 +50,7 @@ public class LinearEquation {
         return Math.sqrt(Math.pow(Math.abs(x2-x1),2)+Math.pow(Math.abs(y2-y1),2));
     }
     public String solve(double x){
-        if (findSlope().length == 1){
+        if (findSlope().length == 1){ // slope is either horizontal or vertical
             if (findSlope()[0]==0){
                 if (x==x1) {
                     return "All real numbers"; //  vertical graph has all y values for one x value
@@ -63,7 +63,7 @@ public class LinearEquation {
                 return String.valueOf(y1); // horizontal graph all values are the same
             }
         }
-        return String.valueOf(findSlope()[0]*x + Double.parseDouble(findYIntercept()));
+        return "with " + x + " as x in " + formEquation() + " y would be " + String.valueOf(findSlope()[0] * x + Double.parseDouble(findYIntercept()));
     }
     public String formEquation() {
         if (findSlope().length == 1) {
