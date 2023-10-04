@@ -29,11 +29,14 @@ Methods :
 
     public String findYIntercept(double x1,double y1) - This method with the help of findSlope will find the y intercept by finding difference between y1 and x1 multiplied by the slope, this method will check for the length of the returned value of findSlope, if the length is 1 meaning the equation represents a vertical line, it will return "Does Not Exist", this method will return a signed double as a string
 
-    public String findDistance(double x1,double y1,double x2,double y2) - Using the pythagorean theorem, this method will find the distance between the two points by finding the square root of the sum of the x and y displacement squared
+    public double findDistance(double x1,double y1,double x2,double y2) - Using the pythagorean theorem, this method will find the distance between the two points by finding the square root of the sum of the x and y displacement squared
 
     public String toString() - This method will allow print statements directly referencing the object to print out the values of: the two points, the equation, slope, y intercept, and distance between the two points. The format of the equation will be in three possible formats y = n for horizontal line (0 slope), y = mx+b (non zero slope), x = n vertical line
 
     public String solve(double xIn) - This method will return a set of coordinates as a string, found by replacing the x value in the equation with xIn which will be parsed from user input
+
+Runner class:
+    use scanner to get two inputs from the user, which will then be used to create a new LinearEquation object, after that a loop will start where the user will input a x value for the program to solve (q will be used to quit)
 
 
 
